@@ -1,14 +1,10 @@
 (ns aoc-2020.day1.core
   (:require
-    [clojure.java.io :as io]
-    [clojure.string :as str]
-    [clojure.edn :as edn]))
+    [clojure.edn :as edn]
+    [aoc-2020.util :refer [read-file]]))
 
 (defn get-num-list []
-  (->> (io/file "./src/aoc_2020/day1/input1.txt")
-       slurp
-       str/split-lines
-       (map str/trim)
+  (->> (read-file "./src/aoc_2020/day1/input1.txt")
        (map edn/read-string)))
 
 (defn get-sum-pair-product [sum nums]
