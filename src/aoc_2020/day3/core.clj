@@ -27,10 +27,9 @@
 (defn on-tree? [grid pos]
   (= "#" (grid-square grid pos)))
 
-(defn part1 []
+(defn count-arboreal-stops [slope]
   (let [grid        (read-input1)
-        initial-pos (Position. 0 0)
-        slope       (Position. 3 1)]
+        initial-pos (Position. 0 0)]
     (loop [tree-count 0
            position   initial-pos]
       (let [next-position (move-on-grid grid position slope)]
@@ -38,3 +37,14 @@
           (nil? next-position)          tree-count
           (on-tree? grid next-position) (recur (inc tree-count) next-position)
           :else                         (recur tree-count next-position))))))
+
+(defn part1 []
+  (count-arboreal-stops (Position. 3 1)))
+
+(defn part2 []
+  (let [slopes (list (Position. 1 1)
+                     (Position. 3 1)
+                     (Position. 5 1)
+                     (Position. 7 1)
+                     (Position. 1 2))]
+    (reduce #(* %1 (count-arboreal-stops %2)) 1 slopes)))
