@@ -2,12 +2,12 @@
   (:require
     [clojure.edn :as edn]
     [clojure.string :as str]
-    [aoc-2020.util :refer [read-file]]))
+    [aoc-2020.util :refer [read-file-lines]]))
 
 (defrecord Position [x y])
 
 (defn read-input1 []
-  (->> (read-file "./src/aoc_2020/day3/input1.txt")
+  (->> (read-file-lines "./src/aoc_2020/day3/input1.txt")
        (map #(str/split % #""))))
 
 (defn move-on-grid [grid pos mov]

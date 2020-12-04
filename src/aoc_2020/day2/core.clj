@@ -2,7 +2,7 @@
   (:require
     [clojure.edn :as edn]
     [clojure.string :as str]
-    [aoc-2020.util :refer [read-file]]))
+    [aoc-2020.util :refer [read-file-lines]]))
 
 (defn count-char [c password]
   (->> (str/split password #"")
@@ -33,7 +33,7 @@
     (occurs-once? c (dec pos1) (dec pos2) password)))
 
 (defn read-input1 []
-  (->> (read-file "./src/aoc_2020/day2/input1.txt")
+  (->> (read-file-lines "./src/aoc_2020/day2/input1.txt")
        (map #(str/split % #"[- :]+"))))
 
 (defn part1 []

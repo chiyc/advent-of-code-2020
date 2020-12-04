@@ -3,8 +3,12 @@
     [clojure.java.io :as io]
     [clojure.string :as str]))
 
-(defn read-file [filename]
+(defn read-file-lines [filename]
   (->> (io/file filename)
        slurp
        str/split-lines
        (map str/trim)))
+
+(defn read-file [filename]
+  (->> (io/file filename)
+       slurp))
