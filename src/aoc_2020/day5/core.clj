@@ -44,6 +44,13 @@
     (-> (bisect-space range col-partition \L)
         (:min))))
 
+; Thanks, Zach, for this clever approach!
+(defn get-seat-row [seat]
+  (-> (re-find #"[FB]+" seat)
+      (str/replace #"F" "0")
+      (str/replace #"B" "1")
+      (Integer/parseInt 2)))
+
 (defn get-seat-id [seat]
   (+ (* (get-seat-row seat)
         8)
