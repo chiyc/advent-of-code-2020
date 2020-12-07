@@ -26,8 +26,8 @@
     (if (= 0 (count contents))
       false
       (or (contents search-color)
-          (some #(bag-contains-color? % search-color rules)
-                (map (fn [[color _]] color) contents))))))
+          (some (fn [[color _]] (bag-contains-color? color search-color rules))
+                contents)))))
 
 (defn part1 []
   (let [rules (read-rules)]
