@@ -12,3 +12,6 @@
 (defn read-file [filename]
   (->> (io/file filename)
        slurp))
+
+(defn replace-nth [coll idx new]
+  (concat (take idx coll) (list new) (drop (inc idx) coll)))
