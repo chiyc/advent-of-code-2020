@@ -23,4 +23,14 @@
   (find-weakness (read-input)))
 
 (defn part2 []
-  )
+  (let [input (read-input)
+        sum (find-weakness (read-input))
+        nums (take-while #(not= sum %) input)]
+    (loop [start 0
+           end 2]
+      (let [window (drop start (take end nums))
+            window-sum (apply + window)]
+        (cond
+          (= sum window-sum) (+ (apply min window) (apply max window))
+          (< window-sum sum) (recur start (inc end))
+          (> window-sum sum) (recur (inc start) end))))))

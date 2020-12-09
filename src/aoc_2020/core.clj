@@ -28,5 +28,5 @@
   (println "Day 8 - Part 1:" (day8/part1)) ; 1586
   (println "Day 8 - Part 2:" (day8/part2)) ; 703
   (println "Day 9 - Part 1:" (day9/part1)) ; 552655238
-  (println "Day 9 - Part 2:" (day9/part2)) ;
+  (println "Day 9 - Part 2:" (day9/part2)) ; 70672245
   )
