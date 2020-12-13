@@ -11,7 +11,8 @@
     [aoc-2020.day9.core :as day9]
     [aoc-2020.day10.core :as day10]
     [aoc-2020.day11.core :as day11]
-    [aoc-2020.day12.core :as day12]))
+    [aoc-2020.day12.core :as day12]
+    [aoc-2020.day13.core :as day13]))
 
 (defn -main [& args]
   (println "Day 1 - Part 1:" (day1/part1)) ; 1006176
@@ -38,4 +39,5 @@
   ;(println "Day 11 - Part 2:" (day11/part2)) ; 2159
   (println "Day 12 - Part 1:" (day12/part1)) ; 521
   (println "Day 12 - Part 2:" (day12/part2)) ; 22848
+  (println "Day 13 - Part 2:" (day13/part1)) ; 174
   )
