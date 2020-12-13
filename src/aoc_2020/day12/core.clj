@@ -58,7 +58,6 @@
 (defn navigate-directions [ship directions actions]
   (loop [ship ship
          [first & rest] directions]
-    (println ship first)
     (if (empty? first)
       ship
       (recur ((actions (first :action)) ship (first :value))
