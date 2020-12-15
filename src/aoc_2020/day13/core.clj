@@ -24,4 +24,24 @@
     (->> (apply min-key second bus-waits)
          (apply *))))
 
+; Bus numbers are all prime
+; Schedule shows that buses 601, 41, and 17 arrive at offset 60
+; Schedule shows that buses 577 and 29 arrive at offset 29
+; LCM of prime numbers is equal to their product
 
+(defn bus-offsets []
+  (let [{bus-lines :bus-lines} (read-schedule)
+        max-offset (apply max (vals bus-lines))]
+    (apply hash-map (mapcat (fn [[bus offset]]
+                              (let [offsets (range offset (inc max-offset) bus)]
+                                [bus offsets]))
+                            bus-lines))))
+
+; NOTE: This is not efficient
+(defn part2 []
+  (let [{bus-lines :bus-lines} (read-schedule)
+        interval (* 601 41 17)]
+    (loop [curr (- interval 60)]
+      (if (every? (fn [[bus offset]] (= 0 (mod (+ curr offset) bus))) bus-lines)
+        curr
+        (recur (+ curr interval))))))
