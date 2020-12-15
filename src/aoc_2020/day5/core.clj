@@ -2,18 +2,11 @@
   (:require
     [clojure.edn :as edn]
     [clojure.string :as str]
-    [aoc-2020.util :refer [read-file-lines]]
+    [aoc-2020.util :refer [read-file-lines expt]]
     [clojure.set :as set]))
 
 (defn read-seats []
   (read-file-lines "./src/aoc_2020/day5/input1.txt"))
-
-(defn expt [base pow]
-  (loop [exponent pow
-         curr 1]
-    (if (= exponent 0)
-      curr
-      (recur (dec exponent) (* base curr)))))
 
 (defrecord Range [min max])
 

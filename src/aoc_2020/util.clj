@@ -15,3 +15,14 @@
 
 (defn replace-nth [coll idx new]
   (concat (take idx coll) (list new) (drop (inc idx) coll)))
+
+(defn expt [base pow]
+  (loop [exponent pow
+         curr 1]
+    (if (= exponent 0)
+      curr
+      (recur (dec exponent) (* base curr)))))
+
+(defn padl [s n c]
+  (str (str/join (repeat (- n (count s)) c))
+       s))
