@@ -33,3 +33,6 @@
 
 (defn part1 []
   (play-game (read-starting-numbers) 2020))
+
+(defn part2 []
+  (play-game (read-starting-numbers) 30000000))

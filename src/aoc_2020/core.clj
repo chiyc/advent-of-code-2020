@@ -45,5 +45,6 @@
 
   (println "Day 14 - Part 1:" (day14/part1)) ; 3059488894985
   (println "Day 14 - Part 2:" (day14/part2)) ;
-  (println "Day 15 - Part 1:" (day15/part1)) ;
+  (println "Day 15 - Part 1:" (day15/part1)) ; 755
+  ;(println "Day 15 - Part 2:" (day15/part2)) ; 11962
   )
