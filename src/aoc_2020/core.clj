@@ -52,4 +52,5 @@
   (println "Day 16 - Part 1:" (day16/part1)) ; 26869
   (println "Day 16 - Part 2:" (day16/part2)) ; 855275529001
   (println "Day 17 - Part 1:" (day17/part1)) ; 395
+  (println "Day 17 - Part 2:" (day17/part2)) ; 728 too low
   )
