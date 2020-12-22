@@ -18,7 +18,7 @@
                  {:ingredients (set (str/split ingredients #" "))
                   :allergens   (set (str/split allergens #", "))}))))))
 
-(defn part1 []
+(defn solution []
   (let [foods (read-input)
         allergens (->> foods
                        (mapcat :allergens)
@@ -42,16 +42,24 @@
             (let [known-allergens (set (vals allergen-ingredients))
                   next-options (map #(vector (first %) (set/difference (second %) known-allergens))
                                     allergen-options)]
-              (println "next" next-options)
               (recur (merge allergen-ingredients (apply hash-map
                                                         (mapcat (fn [[allergen ingredient-set]] [allergen (first ingredient-set)])
                                                                 (filter #(= 1 (count (second %)))
                                                                         next-options))))
                      (filter #(not= 1 (count (second %))) next-options)))))]
-    (->> foods
-         (map #(set/difference (% :ingredients) (set (vals allergen-ingredients))))
-         (map count)
-         (apply +))))
+    {:part1 (->> foods
+                 (map #(set/difference (% :ingredients) (set (vals allergen-ingredients))))
+                 (map count)
+                 (apply +))
+     :part2 (->> allergen-ingredients
+                 (sort-by first)
+                 (vals)
+                 (str/join ","))}))
 
+(defn part1 []
+  (:part1 (solution)))
 
-(println (part1))
+(defn part2 []
+  (:part2 (solution)))
+
+(println (part2))

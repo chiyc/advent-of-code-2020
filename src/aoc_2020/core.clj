@@ -64,4 +64,5 @@
   (println "Day 20 - Part 1:" (day20/part1)) ;
 
   (println "Day 21 - Part 1:" (day21/part1)) ; 2485
+  (println "Day 22 - Part 2:" (day21/part2)) ; bqkndvb,zmb,bmrmhm,snhrpv,vflms,bqtvr,qzkjrtl,rkkrx
   )
