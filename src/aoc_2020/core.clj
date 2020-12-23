@@ -21,7 +21,8 @@
     [aoc-2020.day19.core :as day19]
     [aoc-2020.day20.core :as day20]
     [aoc-2020.day21.core :as day21]
-    [aoc-2020.day22.core :as day22]))
+    [aoc-2020.day22.core :as day22]
+    [aoc-2020.day23.core :as day23]))
 
 (defn -main [& args]
   (println "Day 1 - Part 1:" (day1/part1)) ; 1006176
@@ -67,4 +68,6 @@
   (println "Day 21 - Part 1:" (day21/part1)) ; 2485
   (println "Day 21 - Part 2:" (day21/part2)) ; bqkndvb,zmb,bmrmhm,snhrpv,vflms,bqtvr,qzkjrtl,rkkrx
   (println "Day 22 - Part 1:" (day22/part1)) ; 32824
+  (println "Day 22 - Part 2:" (day22/part2)) ;
+  (println "Day 23 - Part 1:" (day23/part1)) ; 52864379
   )

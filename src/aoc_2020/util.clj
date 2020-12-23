@@ -26,3 +26,6 @@
 (defn padl [s n c]
   (str (str/join (repeat (- n (count s)) c))
        s))
+
+(defn index-of [item coll]
+  (defn index-of [e coll] (first (keep-indexed #(if (= e %2) %1) coll))))
